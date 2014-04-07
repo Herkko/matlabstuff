@@ -3,7 +3,8 @@ function [classifier, trainingSet, testSet]  = bayes(words, documents, newsgroup
 %etsi testisetti kaikista dokumenteista. 
 %muodosta taulukko, johon kuuluu:  newsgroup | alku | loppu
 %tarvittava data on taulukosa y
-% kutsu on bayes(voc, xs, y);
+% [Xs y voc groups] = loadnews();
+% kutsu on [classifier, trainingSet, testSet] = bayes(voc, Xs, y);
 
 
 %creates trainingSet (90% of documents per newsgroup belongs to
