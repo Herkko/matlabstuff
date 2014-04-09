@@ -15,76 +15,48 @@ function [classifier, trainingSet, testSet]  = bayes(words, documents, newsgroup
 %sanat löytyvät sieltä. Jokainen sana siis käydään läpi ja katsotaan
 %löytyykö ko. alueelta.
 
-vocOccurances = zeros(53976, 20);
-l = 1;
-
-
-%%Tätä pitää parantaa nopeammaksi, niin että käy listan vain kertaalleen
-%%läpi ja summaa listaan esiintymistiheydet dokumenteissa.
-
-%niin kauan kuin ollaan startpointin ja endpointin välissä, niin mennään
-%eteenpäin ja pistetään voc occuranceen lisää tavaraa
+classifier = zeros(53976, 20);
 
 k=1; % juokseva listan numero
 l=1; %juokseva dokumentin numero
 
-for y=1:20
-    startpoint = trainingSet(y,1);
-    endpoint = trainingSet(y,2);
+for i=1:20
+    
+    startpoint = trainingSet(i,1);
+    endpoint = trainingSet(i,2);
    
-    %l pitää saada nostettua startpointtiin jokaisessa välissä
-    ehto = documents(k,1);
-    while ehto<startpoint
+   %kelataan aina jokaisella kierroksella indeksi k sopivaan paikkaan,
+   %jottei käydä läpi kaikkia dokumentteja
+    cond = documents(k,1);
+    while cond<startpoint
         k=k+1;
-        ehto = documents(k,1);
+        cond = documents(k,1);
     end
     
     
     while l<endpoint
         wordnumber = documents(k,2);
-        vocOccurances(wordnumber,y) = (vocOccurances(wordnumber,y)+1);
+        classifier(wordnumber,i) = (classifier(wordnumber,i)+1);
         l=documents(k,1);
         k=k+1;
     end
 
-    for i=1:53976
-    vocOccurances(i,y) = (vocOccurances(i,y)+1)/((endpoint-startpoint)+2);
+    for j=1:53976
+    divider = (endpoint-startpoint)+2;   
+    classifier(j,i) = (classifier(j,i)+1)/divider;
     
     end
 
 end
 
 %disp(trainingSet);
-classifier = vocOccurances;
+
 %save classifier.mat classifier;
-
-
-end
-
-function classify(words, documents, trainingSet, vocOccurancy)
-%tries to classify some documents to groups.
-
-%etsi todennäköisyys että dokumentti kuuluu luokkaan
-doc = trainingSet(1,2);
-startpoint=(doc+1);
-endpoint = (doc+2);
-startInd =find(documents>=startpoint, 1, 'first');
-endInd = find(documents>=endpoint, 1, 'first');
-
-    for p=startInd:endInd
-        wordId = documents(p,2);
-        %sanan numero jolle pitäisi etsiä osamäärät vocOccurancystä
-        
-        find(vocOccurancy(2));
-        
-        
-        
-     end
-
-
-
+sanityCheck(classifier, words);
 
 end
+
+
 
 
 
@@ -107,6 +79,22 @@ end
 
 
 end
+
+
+function sanityCheck(classifier, words)
+
+for i=1:20;
+    
+    column = classifier(i,:);
+    column(:,2) = (1:length(classifier));
+    set = sortrows(column, 1)
+end
+
+
+
+
+end
+
 
 
 
