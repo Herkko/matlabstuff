@@ -1,6 +1,6 @@
 function clusters = hierarcial(similarityMatrix, condition)
  
-% basic simple link example A = [0, -2, -5,-7 ,-12; -2, 0, -3, -5, -10; -5,-3, 0, -2, -7; -7, -5, -2, 0,-5; -12,-10,-7,-5,0 ]
+% basic simple link example A = [inf, 2, 5,7 ,12; 2, inf, 3, 5, 10; 5,3, inf, 2, 7; 7, 5, 2, inf,5; 12,10,7,5,inf ]
 
 % basic movieSet  set =[1,2,7,12,98,97,96,95,94,121,144,174,226,176,183,222,227,228,229,230]
 % another movieSet set = [1, 8, 21, 35, 71, 95, 98, 183, 185, 187, 168, 208
@@ -26,8 +26,8 @@ i=1;
 
 while (endCondition ==0) 
         
-        %etsii suurimman arvon indeksit similarityMatrixista
-        [x,y, endCondition] = findBiggest(similarityMatrix);
+        %etsii pienimmän arvon indeksit similarityMatrixista
+        [x,y, endCondition] = findSmallest(similarityMatrix);
         if (endCondition == 1) 
             break;
         end
@@ -61,11 +61,11 @@ end
 
 %etsii pienimmän alkion indeksit. jos kaikki alkiot ovat inf, niin
 %palauttaa end condition ja lopetetaan
-function [x,y, endCondition] = findBiggest(A)
+function [x,y, endCondition] = findSmallest(A)
 
 x=0;
 y=0;
-biggest= -inf;
+biggest= 0;
 endCondition = 0;
 
 for i=1:length(A)
@@ -85,7 +85,7 @@ end
     
 end
 
-if (biggest == -inf)
+if (biggest == 0)
     endCondition = 1;
 end
 
@@ -114,10 +114,10 @@ function similarityMatrix = updateSingleLink(similarityMatrix, x, y)
     similarityMatrix(:,koko) = similarityMatrix(koko,:);
     
     %nollataan molemmat rivit
-    similarityMatrix(x,:) = -inf;
-    similarityMatrix(:,x) = -inf;
-    similarityMatrix(:,y) = -inf;
-    similarityMatrix(y,:) = -inf;
+    similarityMatrix(x,:) = 0;
+    similarityMatrix(:,x) = 0;
+    similarityMatrix(:,y) = 0;
+    similarityMatrix(y,:) = 0;
     
 end
 
@@ -143,10 +143,10 @@ function similarityMatrix = updateCompleteLink(similarityMatrix, x, y)
     similarityMatrix(:,koko) = similarityMatrix(koko,:);
     
     %nollataan molemmat rivit
-    similarityMatrix(x,:) = -inf;
-    similarityMatrix(:,x) = -inf;
-    similarityMatrix(:,y) = -inf;
-    similarityMatrix(y,:) = -inf;
+    similarityMatrix(x,:) = 0;
+    similarityMatrix(:,x) = 0;
+    similarityMatrix(:,y) = 0;
+    similarityMatrix(y,:) = 0;
     
 end
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.3.30)  9 APR 2014 18:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.3.30)  10 APR 2014 18:58
 entering extended mode
  %&-line parsing enabled.
 **raportti.tex
@@ -332,12 +332,7 @@ LaTeX Font Info:    ... okay on input line 24.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-Overfull \hbox (11.1429pt too wide) in paragraph at lines 25--25
-[]\OT1/cmr/bx/n/14.4 Introduction to ma-chine learn-ing, Ex-tra project 
- []
-
-<sanityCheck1.jpg, id=1, 562.1pt x 421.575pt>
+ <sanityCheck1.jpg, id=1, 562.1pt x 421.575pt>
 File: sanityCheck1.jpg Graphic file (type jpg)
  <use sanityCheck1.jpg>
 <sanityCheck2.jpg, id=2, 562.1pt x 421.575pt>
@@ -354,7 +349,24 @@ LaTeX Warning: Float too large for page by 102.4956pt on input line 60.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./sanityCheck1.jpg> <.
+/sanityCheck2.jpg> <./sanityCheck3.jpg> <./sanityCheck4.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--72
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
+
+Overfull \hbox (7.30615pt too wide) in paragraph at lines 75--76
+[]\OT1/cmr/m/n/10 - [test-Num-bers, train-Num-bers, test-classes, train-classes
+] = helpLoad-ingNum-
+ []
+
 
 ! LaTeX Error: There's no line here to end.
 
@@ -362,42 +374,44 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 \newline
-             
+l.105 \newline
+              
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<movies.jpg, id=11, 702.625pt x 301.125pt>
+[3
+
+] <movies.jpg, id=18, 702.625pt x 301.125pt>
 File: movies.jpg Graphic file (type jpg)
  <use movies.jpg>
-Overfull \hbox (81.79134pt too wide) in paragraph at lines 97--98
+Overfull \hbox (81.79134pt too wide) in paragraph at lines 120--121
 [][] 
  []
 
-<moviessl.jpg, id=12, 702.625pt x 301.125pt>
+<moviessl.jpg, id=19, 702.625pt x 301.125pt>
 File: moviessl.jpg Graphic file (type jpg)
  <use moviessl.jpg>
-Overfull \hbox (81.79134pt too wide) in paragraph at lines 103--104
+Overfull \hbox (81.79134pt too wide) in paragraph at lines 126--127
 [][] 
  []
 
-[2] [3 <./sanityCheck1.jpg> <./sanityCheck2.jpg> <./sanityCheck3.jpg> <./sanity
-Check4.jpg>] [4 <./movies.jpg> <./moviessl.jpg>] (./raportti.aux) ) 
+[4 <./movies.jpg>] [5 <./moviessl.jpg>] (./raportti.aux) ) 
 Here is how much of TeX's memory you used:
- 2120 strings out of 495061
- 31000 string characters out of 1182621
- 97598 words of memory out of 3000000
- 5325 multiletter control sequences out of 15000+50000
+ 2137 strings out of 495061
+ 31282 string characters out of 1182621
+ 96598 words of memory out of 3000000
+ 5339 multiletter control sequences out of 15000+50000
  4245 words of font info for 16 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  36i,6n,38p,218b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on raportti.pdf (4 pages, 256940 bytes).
+</usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb>
+Output written on raportti.pdf (5 pages, 268014 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 36 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

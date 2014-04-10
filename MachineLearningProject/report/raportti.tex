@@ -9,7 +9,7 @@
 
 
 \title{Introduction to machine learning}
-\author{}
+\author{Herkko Virolainen, 013463430}
 \date{}
 
 \pdfinfo{%
@@ -22,7 +22,7 @@
 }
 
 \begin{document}
-\section {Introduction to machine learning, Extra project}
+\section {perceptron, mnist set}
 
 Ensimmäisenä tehtävä oli luoda perceptron algoritmi, jota sitten käytetään käsinkirjoitettujen numeroiden luokitteluun. Tässä tapauksessa tarkoituksena
 oli luokitella ainoastaan 1 ja 0. Tein toteutuksen Matlabilla. Tein numeroiden lataamiseen oman scriptin, joka valitsee numeroista vain 1 ja 0, 
@@ -41,7 +41,7 @@ luokat olivat eroteltavissa, niin algoritmi konvergoi parissa iteaatiossa. Seura
 ryhmiä luokittelija sai luotua. Kohtasin pieniä ongelmia siinä miten olisin saanut MatLabissa esitettyä pisteet omina luokkinaan, mutta 
 tässä tapauksessa onneksi pisteitä on niin vähän, että on melko selvää mitkä pisteet kuuluvat mihinkin luokkaan. Tarkastin kuitenkin käsin, että 
 saadut tulokset olivat järkeviä.
-\begin{figure}[ht!]
+\begin{figure}[ht]
 
 \includegraphics[width=70mm]{sanityCheck1.jpg}
 \caption{Luokittelijan testi 1}
@@ -56,9 +56,9 @@ saadut tulokset olivat järkeviä.
 \includegraphics[width=70mm]{sanityCheck4.jpg}
 \caption{Pisteet eivät olleet luokiteltavissa, algoritmi ei konvergoinut}
 
-\label{overflow}
-\end{figure}
 
+\end{figure}
+\clearpage 
 
 
 Seuraavaksi latasin apufunktiolla 5000 datapistettä mnist aineistosta ja otin sieltä vain 1 ja 0.
@@ -68,8 +68,20 @@ Tulos ei sinällään ollut kovin yllättävä, koska aineiston dimensio oli tod
 pikselitasolla. Visualisaatio paketti oli joko jotenki rikki tai en osannut vain käyttää sitä, mutta en onnistunut luomaan kuvaa esimerkin mukaisesti yksittäisistä
 numeroista, enkä luokittelijasta,niinkuin tehtävänannossa pyydettiin. Uskoisin kuitenkin että luokittelija ei juurikaan näytä kummaltakaan numerolta, vain jonkinlaiselta
 sekoitukselta kummastakin. 
+\newline
 
-\section{excercise 2, news set}
+Koodin testaus onnistuu esimerkiksi seuraavanlaisilla komennoilla.
+\begin{itemize}
+\item - [testNumbers, trainNumbers, testclasses, trainclasses] =  helpLoadingNumbers()
+\item classifier = perceptron(trainNumbers,testClasses)
+\item classify(classifier, testNumbers, testClasses)
+
+\end{itemize}
+
+
+
+
+\section{Bayes classifier, news set}
 
 Toisessa tehtävässä oli tarkoitus luoda yksinkertainen Bayes luokittelija, joka luokittelee dokumentteja kuulumaan erilaisiin uutisryhmiin perustuen 
 dokumentin sisältöön. 
@@ -82,8 +94,14 @@ Yllätykseksi Luokittalija toimi todella huonosti. En osaa sanoa johtuiko se jos
 oikein kohtalaisella prosentilla vain muutamat luokat: 11,12, 16,17, 18 ja 19. Lopuilla oikein luokiteltujen dokumenttien määrä oli lähellä 0\%.
 
 Jos implementaatiossani ei ollut mitään vikaa ja tämä oli odotettava tulos, niin olen vähintäänkin hämmentynyt. Oletin että luokittelija olisi ollut parempi tällaisen aineiston kanssa.
+Algoritmia voi testata seuraavilla komennoilla
+\begin{itemize}
+\item  [Xs y voc groups] = loadnews();
+\item . [classifier, trainingSet, testSet] = bayes(voc, Xs, y);
+\item result = classify(voc, Xs, testSet, classifier)
+\end{itemize}
 
-\section{excercise 3, movie dataset}
+\section{Hierarial clustering, movie dataset}
 Kolmantena tehtävänä oli tehdä clusterointi algoritmi, joka luokittelee elokuvia samoihin luokkiin katsojien antamien suositusten perusteella.
 Tein ohjelman kotona matlabilla, jossa minulla ei ollut saatavilla statistical toolboxia, joten dendrogrammien tekeminen ei onnistunut, joten jouduin
 tulkitsemaan kaikki luomani esimerkit ruutupaperille. 
